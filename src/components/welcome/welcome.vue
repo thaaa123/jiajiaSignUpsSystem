@@ -5,24 +5,27 @@
       <div class="zhuan"></div>
       <div class="jia1"></div>
       <div class="jia2"></div>
-      <img class="online-xuanke animated" src="~welcome/online-xuanke.png" />
-      <img class="jiajia-ico animated" src="~welcome/jiajia-ico.png" />
-      <img class="jiajia animated" src="~welcome/jiajia.png" />
+      <img class="online-xuanke" src="~welcome/online-xuanke.png" />
+      <img class="jiajia-ico" src="~welcome/jiajia-ico.png" />
+      <img class="jiajia" src="~welcome/jiajia.png" />
 	  </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import {getAssociationList} from 'api/association'
+  import {SET_ASSOCIATION_LIST} from '@/store/mutation-types'
+
   export default {
     created () {
       setTimeout(() => {
         this._getAssList()
-      }, 1500)
+      }, 1000)
     },
     methods: {
       _getAssList () {
         getAssociationList().then((res) => {
+          this.$store.commit(SET_ASSOCIATION_LIST, res)
           this.$router.push('associationList')
         })
       }

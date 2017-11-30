@@ -32,6 +32,20 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           console.log(e)
         })
       })
+
+      app.get('/api/getAssociation', function (req, res) {
+        const url = 'http://jiajia.xuyue.ren/Api/WeChat/GetSheTuan?sheTuanId=' + req.query.assId
+        axios.get(url, {
+          headers: {
+            referer: 'http://jiajia.xuyue.ren/',
+            host: 'jiajia.xuyue.ren'
+          }
+        }).then((response) => {
+          res.json(response.data)
+        }).catch((e) => {
+          console.log(e)
+        })
+      })
     },
     clientLogLevel: 'warning',
     historyApiFallback: true,
