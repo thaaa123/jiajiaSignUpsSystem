@@ -46,6 +46,48 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           console.log(e)
         })
       })
+
+      app.get('/api/getAssociationDetail', function (req, res) {
+        const url = 'http://jiajia.xuyue.ren/Api/WeChat/GetSheTuanDetail?sheTuanId=' + req.query.assId
+        axios.get(url, {
+          headers: {
+            referer: 'http://jiajia.xuyue.ren/',
+            host: 'jiajia.xuyue.ren'
+          }
+        }).then((response) => {
+          res.json(response.data)
+        }).catch((e) => {
+          console.log(e)
+        })
+      })
+
+      app.get('/api/getPiCiInfo', function (req, res) {
+        const url = 'http://jiajia.xuyue.ren/Api/WeChat/GetPiCiInfo?sheTuanId=' + req.query.assId
+        axios.get(url, {
+          headers: {
+            referer: 'http://jiajia.xuyue.ren/',
+            host: 'jiajia.xuyue.ren'
+          }
+        }).then((response) => {
+          res.json(response.data)
+        }).catch((e) => {
+          console.log(e)
+        })
+      })
+
+      app.get('/api/getPiCi', function (req, res) {
+        const url = 'http://jiajia.xuyue.ren/Api/WeChat/GetPiCi?sheTuanId=' + req.query.assId
+        axios.get(url, {
+          headers: {
+            referer: 'http://jiajia.xuyue.ren/',
+            host: 'jiajia.xuyue.ren'
+          }
+        }).then((response) => {
+          res.json(response.data)
+        }).catch((e) => {
+          console.log(e)
+        })
+      })
     },
     clientLogLevel: 'warning',
     historyApiFallback: true,

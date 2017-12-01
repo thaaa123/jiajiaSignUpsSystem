@@ -86,7 +86,7 @@
           letter-spacing: 0
           display: block
           position: absolute
-          font-size: $font-size-small-s
+          font-size: $font-size-small
           text-align: center
           bg-image("shetuan-name-bg")
           background-size: cover;
