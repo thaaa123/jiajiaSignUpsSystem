@@ -7,19 +7,22 @@
         <span class="shetuan-name radius">{{association.Name}}</span>
     </div>
     <div class="shetuan-bar wid-100 shadow">
-      <a class="shetuan-bar-item just-center vert-center active">
+      <router-link :to="'/association/' + assId + '/associationDetail/'" class="shetuan-bar-item">
           <span class="item-ico first"></span>
           <span class="item-name">社团详情</span>
-      </a>
-      <a class="shetuan-bar-item just-center vert-center">
+      </router-link>
+      <router-link :to="'/association/' + assId + '/teacherList/'" class="shetuan-bar-item">
           <span class="item-ico second"></span>
           <span class="item-name">教师配备</span>
-      </a>
-      <a class="shetuan-bar-item just-center vert-center">
+      </router-link>
+      <router-link :to="'/association/' + assId + '/associationTidbits/'" class="shetuan-bar-item">
           <span class="item-ico third"></span>
           <span class="item-name">社团花絮</span>
-      </a>
+      </router-link>
     </div>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
@@ -43,7 +46,6 @@
       _getAss (assId) {
         getAssociation(assId).then((res) => {
           this.association = res[0]
-          console.log(this.association.Name)
         })
       }
     }
@@ -110,7 +112,7 @@
       .item-name
         font-size: $font-size-medium-x
         color: #c1aa97
-    .shetuan-bar-item.active .item-name
+    .shetuan-bar-item.router-link-active .item-name
       color: #e9865f
     
 

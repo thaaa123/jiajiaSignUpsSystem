@@ -63,3 +63,31 @@ export function getPiCi (assId) {
     return Promise.resolve(res.data)
   })
 }
+
+export function getTeacherList (assId) {
+  const url = '/api/getTeacher'
+
+  const data = {
+    'assId': assId
+  }
+
+  return axios.get(url, {
+    params: data
+  }).then((res) => {
+    return Promise.resolve(res.data)
+  })
+}
+
+export function getAlbum (assId) {
+  const url = '/api/getAlbum'
+
+  const data = {
+    'assId': assId
+  }
+
+  return axios.get(url, {
+    params: data
+  }).then((res) => {
+    return Promise.resolve(res.data)
+  })
+}

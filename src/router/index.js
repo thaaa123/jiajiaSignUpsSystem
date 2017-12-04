@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import welcome from '@/components/welcome/welcome'
 import associationList from '@/components/association-list/association-list'
 import association from '@/components/association/association'
+import associationDetail from '@/components/association-detail/association-detail'
+import teacherList from '@/components/teacher-list/teacher-list'
+import associationTidbits from '@/components/association-tidbits/association-tidbits'
 
 Vue.use(Router)
 
@@ -26,7 +29,25 @@ export default new Router({
       path: '/association/:id',
       name: 'association',
       component: association,
-      props: true
+      props: true,
+      children: [
+        {
+          path: '',
+          redirect: 'associationDetail'
+        },
+        {
+          path: 'associationDetail',
+          component: associationDetail
+        },
+        {
+          path: 'teacherList',
+          component: teacherList
+        },
+        {
+          path: 'associationTidbits',
+          component: associationTidbits
+        }
+      ]
     }
   ]
 })
