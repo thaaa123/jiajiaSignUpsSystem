@@ -2,11 +2,11 @@
   <div class="association-tidbits">
     <div class="imageBg"></div>
     <div class="huaxu-content-box" >
-      <span class="media-title radius">精彩视频</span>
+      <span class="media-title radius" v-if="mediaList.length > 0">精彩视频</span>
       <div class="media-content-box">
-        <div class="media-item" v-for="item in albumList" v-if="item.Type =='视频'">
+        <div class="media-item" v-for="item in mediaList">
           <div class="media radius video">
-            <img class="wid-100 hei-100" v-bind:src="url + item.Cover" />
+            <img class="wid-100 hei-100 lazy-img-fadein" v-lazy="url + item.Cover" />
           </div>
                   
           <div class="video-sign wid-100 just-center vert-center">
@@ -15,11 +15,11 @@
           <span>{{item.Name}}</span>
         </div>
       </div>
-      <span class="media-title radius">社团照片</span>
+      <span class="media-title radius" v-if="imageList.length > 0">社团照片</span>
       <div class="media-content-box">
-        <div class="media-item"   v-for="item in albumList" v-if="item.Type =='图片'">
+        <div class="media-item" v-for="item in imageList">
           <div class="media radius">
-            <img class="wid-100 hei-100" v-bind:src="url + item.Cover" />
+            <img class="wid-100 hei-100 lazy-img-fadein" v-lazy="url + item.Cover" />
           </div>
           <span>{{item.Name}}</span>
         </div>
@@ -48,7 +48,18 @@
       _getAlbum (assId) {
         getAlbum(assId).then((res) => {
           this.albumList = res
-          console.log(res)
+        })
+      }
+    },
+    computed: {
+      mediaList: function () {
+        return this.albumList.filter((item) => {
+          return item.Type === '视频'
+        })
+      },
+      imageList: function () {
+        return this.albumList.filter((item) => {
+          return item.Type === '图片'
         })
       }
     }

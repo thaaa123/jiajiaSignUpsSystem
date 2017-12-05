@@ -1,18 +1,19 @@
 <template>
+
   <div class="association-detail">
     <div class="shetuan-content-box">
-        <div class="shetuan-detail-box wid-100 shadow animated fadeIn">
+        <div class="shetuan-detail-box wid-100 shadow">
             <div class="shetuan-detail" v-for="item in associationDetail" v-html="item.Content"></div>
             <div class="detail-bottom wid-100 animated fadeInUp"></div>
         </div>
-        <div class="shetuan-time-box wid-100 shadow animated fadeIn">
-            <div class="shetuan-time just-center animated fadeInLeft">
+        <div class="shetuan-time-box wid-100 shadow">
+            <div class="shetuan-time just-center">
                 <span>选社时间：{{XuanTuanTime}}</span>
                 <span>选社频率：{{XuanTuanPinLv}}</span>
             </div>
-            <div class="shetuan-time-right animated fadeInRight"></div>
+            <div class="shetuan-time-right"></div>
         </div>
-        <div class="shetuan-bottom wid-100 animated swing"></div>
+        <div class="shetuan-bottom wid-100"></div>
         <button class="baoming-btn wid-100 radius shadow" id="baoMing">我要报名</button>
     </div>
   </div>

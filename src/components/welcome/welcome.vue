@@ -8,7 +8,7 @@
       <img class="online-xuanke" src="~welcome/online-xuanke.png" />
       <img class="jiajia-ico" src="~welcome/jiajia-ico.png" />
       <img class="jiajia" src="~welcome/jiajia.png" />
-	  </div>
+    </div>
   </div>
 </template>
 

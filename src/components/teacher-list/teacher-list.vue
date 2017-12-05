@@ -3,7 +3,7 @@
     <div class="imageBg"></div>
     <div class="teacher-box" >
       <div class="teacher-item" v-for="(item,$index) in teacherList">
-        <img class="teacher-img radius animated rotateInDownLeft" v-bind:src="url + item.Photo" />
+        <img class="teacher-img radius animated rotateInDownLeft" v-lazy="url + item.Photo" />
         <div class="teacher-info-box">
           <p>
               <span>{{item.Name}}</span>&nbsp;&nbsp;&nbsp;
