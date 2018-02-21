@@ -7,9 +7,7 @@ import associationDetail from '@/components/association-detail/association-detai
 import teacherList from '@/components/teacher-list/teacher-list'
 import associationTidbits from '@/components/association-tidbits/association-tidbits'
 
-Vue.use(Router)
-
-export default new Router({
+let router = new Router({
   routes: [
     {
       path: '/',
@@ -51,3 +49,11 @@ export default new Router({
     }
   ]
 })
+
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
+})
+
+Vue.use(Router)
+
+export default router

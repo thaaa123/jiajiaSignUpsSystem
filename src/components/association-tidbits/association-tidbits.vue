@@ -8,7 +8,7 @@
           <div class="media radius video">
             <img class="wid-100 hei-100 lazy-img-fadein" v-lazy="url + item.Cover" />
           </div>
-                  
+
           <div class="video-sign wid-100 just-center vert-center">
             <img src="images/video-sign.png" />
           </div>
@@ -70,6 +70,9 @@
   @import "~common/stylus/variable"
   @import "~common/stylus/mixin"
 
+  img[lazy=loading]
+    opacity 0
+    transition: opacity 1s
   .imageBg
     position fixed
     left 0
@@ -104,7 +107,7 @@
         .media
           border: solid 0.0625rem #f6b37f
           radius()
-          img 
+          img
             wid-100()
             hei-100()
         .video-sign
@@ -122,8 +125,8 @@
       .media-item .media,.media-item .video-sign
         height: 2.21875rem;
         cursor: pointer;
-        -webkit-tap-highlight-color:transparent;  
-        -webkit-user-select:none; 
+        -webkit-tap-highlight-color:transparent;
+        -webkit-user-select:none;
       .media-item span
         height: 0.65625rem
         line-height: 0.65625rem

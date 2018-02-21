@@ -45,6 +45,9 @@
   @import "~common/stylus/variable"
   @import "~common/stylus/mixin"
 
+  img[lazy=loading]
+    opacity 0
+    transition: opacity 1s
   .imageBg
     position fixed
     left 0
@@ -80,7 +83,7 @@
         margin-bottom: 0.1875rem
         padding-bottom: 0.0625rem
         position: relative
-        font-size: $font-size-small-s        
+        font-size: $font-size-small-s
       .teacher-info-box p:after
         position: absolute
         right: 0
@@ -91,5 +94,5 @@
         background-color: #c8c7cc
       .teacher-info-box p span
         margin-right: 0.25rem
-        
+
 </style>

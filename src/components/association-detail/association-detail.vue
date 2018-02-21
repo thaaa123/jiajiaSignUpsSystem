@@ -14,7 +14,9 @@
             <div class="shetuan-time-right"></div>
         </div>
         <div class="shetuan-bottom wid-100"></div>
-        <button class="baoming-btn wid-100 radius shadow" id="baoMing">我要报名</button>
+    </div>
+    <div class="baoming-box">
+      <button class="baoming-btn radius shadow" id="baoMing">我要报名</button>
     </div>
   </div>
 </template>
@@ -129,8 +131,14 @@
       margin-bottom: 0.078125rem
       bg-image("shetuan-bottom-bg")
       background-size: cover
+  .baoming-box
+    width 9rem
+    margin 0 auto
+    position fixed
+    bottom: 0.3125rem
+    left 0
+    right 0
     .baoming-btn
-      width: 10.375rem
       height: 1.09375rem
       color: #fff
       font-size: $font-size-large
@@ -139,8 +147,7 @@
       border-style: initial
       border: solid 1px #7fc5c1
       background-color: #77beba
-      position:fixed
-      bottom: 0.3125rem
+      wid-100()
       shadow()
       radius()
 </style>

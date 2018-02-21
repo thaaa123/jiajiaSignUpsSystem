@@ -50,9 +50,9 @@
   @import "~common/stylus/variable"
   @import "~common/stylus/mixin"
 
-  .fade-enter-active, .fade-leave-active 
+  .fade-enter-active, .fade-leave-active
     transition: opacity .5s
-  .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ 
+  .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */
     opacity: 0
   .second-page
     height: 31.921875rem
@@ -61,7 +61,7 @@
     bg-image("index2-bg")
     background-size: 100% 100%
     .cloud
-      width: 9.796875rem
+      width: 9.896875rem
       height: 6.28125rem
       position: relative
       top: 0.15625rem
